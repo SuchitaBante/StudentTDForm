@@ -12,6 +12,9 @@
                         <span *ngIf="studentname.touched && studentname.hasError('required')" class="text-danger">
                             Student Name is required
                         </span>
+                        <span *ngIf="studentname.dirty && studentname.hasError('pattern')" class="text-danger">
+                       Enter Valid Student Name 
+                        </span>
                     </div>
                     <br>
 
@@ -19,8 +22,11 @@
                         <label>Email*</label>
                         <input type="text" class="form-control" name="email" ngModel #email="ngModel" required
                             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,100}$">
-                        <span *ngIf="email.invalid && email.touched" class="text-danger">
+                        <span *ngIf="email.touched && email.hasError('required')" class="text-danger">
                             Email is required
+                        </span>
+                        <span *ngIf="studentname.dirty && studentname.hasError('pattern')" class="text-danger">
+                            Enter Valid Email
                         </span>
                     </div>
                     <br>
@@ -29,7 +35,10 @@
                         <label>Contact*</label>
                         <input type="number" class="form-control" name="contact" ngModel #contact="ngModel" required
                             pattern="^[0-9]{10}$" minlength="10" maxlength="10">
-                        <span *ngIf="contact.invalid && contact.touched" class="text-danger">
+                        <span *ngIf="contact.touched && contact.hasError('required')" class="text-danger">
+                            Please Enter Valid 10 Digit Contact No
+                        </span>
+                         <span *ngIf="contact.dirty && contact.hasError('pattern')" class="text-danger">
                             Please Enter Valid 10 Digit Contact No
                         </span>
                     </div>
