@@ -8,7 +8,7 @@
                     <div class="form-group">
                         <label>Student Name*</label>
                         <input type="text" class="form-control" name="studentname" ngModel #studentname="ngModel"
-                            required pattern="[a-zA-Z]*" minlength="5" maxlength="20">
+                            required pattern="[a-zA-Z ]+$" minlength="5" maxlength="20">
                         <span *ngIf="studentname.touched && studentname.hasError('required')" class="text-danger">
                             Student Name is required
                         </span>
